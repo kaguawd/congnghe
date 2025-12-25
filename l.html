@@ -1,0 +1,497 @@
+const questions = [
+            {
+                id: 1,
+                text: "Gia công cơ khí là quá trình…",
+                options: { A: "thiết kế sản phẩm.", B: "hoàn thiện sản phẩm.", C: "bảo dưỡng sản phẩm.", D: "chế tạo ra sản phẩm." }
+            },
+            {
+                id: 2,
+                text: "Chuyển động chính khi khoan là",
+                options: { A: "chuyển động quay.", B: "chuyển động tịnh tiến.", C: "chuyển động quay và chuyển động tịnh tiến.", D: "chuyển động quay hoặc chuyển động tịnh tiến." }
+            },
+            {
+                id: 3,
+                text: "Lập quy trình công nghệ gia công chi tiết là một phần của quy trình chế tạo cơ khí sau khi đã có",
+                options: { A: "phôi.", B: "phoi.", C: "bản vẽ xây dựng.", D: "bản vẽ kĩ thuật." }
+            },
+            {
+                id: 4,
+                text: "Các chi tiết cơ khí được chế tạo theo bản thiết kế là sản phẩm của gia công cơ khí",
+                options: { A: "có phoi.", B: "không phoi.", C: "truyền thống.", D: "hiện đại." }
+            },
+            {
+                id: 5,
+                text: "Phương pháp gia công khiến chi tiết dễ bị cong, vênh là",
+                options: { A: "đúc.", B: "hàn.", C: "tiện.", D: "phay." }
+            },
+            {
+                id: 6,
+                text: "Sản phẩm của phương pháp hàn là",
+                options: { A: "bạc lót.", B: "khung xe ô tô.", C: "khớp nối.", D: "vỏ động cơ xe máy." }
+            },
+            {
+                id: 7,
+                text: "Cho các phát biểu sau, số phát biểu đúng là?<br>1. Sản xuất cơ khí đóng vai trò quan trọng đối với sự phát triển của nền kinh tế đất nước và đời sống con người.<br>2. Sản xuất cơ khí gồm các bước chính: Chế tạo cơ khí, đóng gói và bảo quản.<br>3. Các phương pháp chế tạo phôi kim loại thường dùng là đúc và gia công áp lực (rèn, dập, cán, ...).<br>4. Nếu sản phẩm của quá trình sản xuất cơ khí chỉ là một chi tiết thì có thể giảm được khâu lắp ráp và đóng gói sản phẩm.",
+                options: { A: "3 và 4.", B: "2 và 3.", C: "1 và 3.", D: "2 và 4." }
+            },
+            {
+                id: 8,
+                text: "Đâu là bước quan trọng nhất trong quá trình sản xuất cơ khí?",
+                options: { A: "Chế tạo cơ khí.", B: "Sản xuất phôi.", C: "Nghiên cứu bản vẽ.", D: "Đóng gói và bảo quản." }
+            },
+            {
+                id: 9,
+                text: "Dây chuyền sản xuất tự động là gì?",
+                options: { 
+                    A: "Tổ hợp của các máy và thiết bị tự động được sắp xếp theo một trình tự xác định để thực hiện các công việc khác nhau nhằm tạo ra sản phẩm.", 
+                    B: "Tập hợp các hoạt động được thiết lập để thực hiện các công việc một cách tuần tự, liên tục như lắp ráp hoặc chế tạo ra sản phẩm.", 
+                    C: "Máy thực hiện các công việc một cách tự động bởi chương trình điều khiển từ máy tính hoặc các vi mạch điện tử.", 
+                    D: "Các cơ cấu tạo ra chuyển động của bàn máy và trục chính của máy, gồm mạch điều khiển, động cơ dẫn động, ..." 
+                }
+            },
+            {
+                id: 10,
+                text: "Con người đóng vai trò gì trong dây truyền sản xuất tự động?",
+                options: { 
+                    A: "Con người không tham gia trực tiếp vào dây truyền sản xuất, chỉ thiết kế, giám sát và hiệu chỉnh.", 
+                    B: "Con người tham gia trực tiếp vào dây truyền sản xuất, thực hiện một số công việc khác nhau nhằm tạo ra sản phẩm.", 
+                    C: "Con người không tham gia vào dây truyền sản xuất, các máy móc, thiết bị trực tiếp thực hiện hết các công việc.", 
+                    D: "Con người tham gia trực tiếp vào dây truyền sản xuất, thực hiện tất cả các công việc nhằm tạo ra sản phẩm." 
+                }
+            },
+            {
+                id: 11,
+                text: "Công nghệ được ứng dụng trong quá trình sản xuất công nghiệp nhằm thu thập các thông số của thiết bị, máy móc trong quá trình hoạt động là?",
+                options: { A: "Kết nối vạn vật trong công nghiệp.", B: "Dữ liệu lớn.", C: "Trí tuệ nhân tạo.", D: "Điện toán đám mây." }
+            },
+            {
+                id: 12,
+                text: "An toàn lao động trong sản xuất cơ khí là?",
+                options: { 
+                    A: "Nhằm phòng, chống tác động của các yếu tố nguy hiểm có hại gây ra thương tật, tử vong, bệnh tật... khi làm việc.", 
+                    B: "Việc đảm bảo an toàn cho những người tham gia giao thông.", 
+                    C: "Tất cả giải pháp phòng, chống tác động của các yếu tố nguy hiểm trong lao động.", 
+                    D: "Phương pháp liên quan đến việc giữ cho thực phẩm luôn được an toàn và vệ sinh." 
+                }
+            },
+            {
+                id: 13,
+                text: "Nền tảng khoa học cơ bản của cơ khí chế tạo là",
+                options: { A: "toán học, vật lí, khoa học vật liệu.", B: "tri thức về sự vật động của tự nhiên.", C: "tri thức về sự vật động của xã hội.", D: "vận động và phát triển của sự vật hiện tượng." }
+            },
+            {
+                id: 14,
+                text: "Sản phẩm của cơ khí chế tạo là",
+                options: { A: "máy móc, thiết bị, công cụ,… phục vụ đời sống và sản xuất.", B: "giải pháp, quy trình chế tạo máy móc.", C: "giải pháp, quy trình cải tiến máy móc.", D: "giải pháp, quy trình nghiên cứu khoa học." }
+            },
+            {
+                id: 15,
+                text: "Công cụ lao động chủ yếu hiện nay của chế tạo cơ khí là",
+                options: { A: "máy tiện, phay, hàn, CNC,..", B: "sức lao động của con người.", C: "robot trí tuệ nhân tạo.", D: "máy tính và robot công nghiệp." }
+            },
+            {
+                id: 16,
+                text: "Mô tả đúng về vai trò của xe gắn máy sử dụng nhiên liệu xăng là?",
+                options: { A: "Giúp cuộc sống con người tiện nghi hơn.", B: "Nâng cao năng suất lao động.", C: "Giúp chinh phục thiên nhiên.", D: "Làm giảm ô nhiễm môi trường." }
+            },
+            {
+                id: 17,
+                text: "Chọn câu phát biểu SAI về chế tạo cơ khí.",
+                options: { A: "Vật liệu chủ yếu của cơ khí chế tạo là phi kim loại.", B: "Sản phẩm cơ khí thúc đẩy, hỗ trợ các ngành nghề khác.", C: "Cần phải có hồ sơ kĩ thuật là các bản vẽ, quy trình gia công,…", D: "Sản phẩm của cơ khí chế tạo rất đa dạng và phong phú." }
+            },
+            {
+                id: 19,
+                text: "Yêu cầu chung đối với vật liệu cơ khí là gì?",
+                options: { A: "Tính sử dụng, tính công nghệ, tính kinh tế.", B: "Tính ứng dụng, tính cơ học, tính công nghệ.", C: "Tính hóa học, tính vật lý, tính cơ học.", D: "Tính sử dụng, tính kinh tế, tính hóa học." }
+            },
+            {
+                id: 24,
+                text: "Tính chất nào là tính chất cơ học của vật liệu cơ khí?",
+                options: { A: "Tính cứng.", B: "Tính dẫn nhiệt.", C: "Tính dẫn điện.", D: "Tính chịu axit." }
+            },
+            {
+                id: 25,
+                text: "Cơ khí chế tạo là lĩnh vực liên quan đến",
+                options: { A: "thiết kế trang thiết bị máy móc.", B: "chế tạo các chi tiết máy.", C: "vận hành sửa chữa máy móc.", D: "thiết kế, chế tạo, vận hành máy móc." }
+            },
+            {
+                id: 26,
+                text: "Bước đầu tiên của quy trình chế tạo cơ khí là gì?",
+                options: { A: "Đọc bản vẽ chi tiết.", B: "Chế tạo phôi.", C: "Thực hiện gia công các chi tiết máy.", D: "Xử lí và bảo vệ bề mặt sản phẩm." }
+            },
+            {
+                id: 27,
+                text: "Vật liệu cơ khí có mấy yêu cầu chung?",
+                options: { A: "1.", B: "2.", C: "3.", D: "4." }
+            },
+            {
+                id: 28,
+                text: "Trong các loại vật liệu dưới đây, vật liệu mới là:",
+                options: { A: "nhôm.", B: "gỗ.", C: "composite.", D: "đồng." }
+            },
+            {
+                id: 29,
+                text: "“Không có khả năng rèn, dập vì giòn nhưng tính đúc lại tốt” là tính chất của:",
+                options: { A: "Gang.", B: "Thép hợp kim.", C: "Nhôm.", D: "Đồng." }
+            },
+            {
+                id: 30,
+                text: "Vật liệu nào sau đây dùng làm săm lốp xe ô tô?",
+                options: { A: "Nhựa nhiệt dẻo.", B: "Nhựa nhiệt rắn.", C: "Cao su.", D: "Đồng." }
+            },
+            {
+                id: 31,
+                text: "Phương pháp nhận biết tính chất cơ bản của kim loại và hợp kim là:",
+                options: { A: "Xác định tính cứng, tính dẻo.", B: "Quan sát đặc trưng quang học.", C: "Phá hủy của mẫu khi chịu tác động cơ học.", D: "Quan sát đặc trưng quang học và xác định khối lượng riêng." }
+            },
+            {
+                id: 32,
+                text: "Đâu là phương pháp gia công cơ khí không phoi?",
+                options: { A: "Đúc.", B: "Tiện.", C: "Phay.", D: "Bào." }
+            },
+            {
+                id: 33,
+                text: "Chuyển động chính khi khoan là:",
+                options: { A: "chuyển động quay của phôi.", B: "chuyển động tịnh tiến mũi khoan.", C: "quay và tịnh tiến mũi khoan.", D: "quay và tịnh tiến phôi." }
+            },
+            {
+                id: 34,
+                text: "Đối với gia công mặt bích, đường kính phôi như thế nào so với đường kính lớn nhất chi tiết?",
+                options: { A: "Bằng nhau.", B: "Lớn hơn.", C: "Nhỏ hơn.", D: "Không liên quan." }
+            },
+            {
+                id: 35,
+                text: "Bước nào được thực hiện đầu tiên trong quá trình sản xuất cơ khí?",
+                options: { A: "Chế tạo phôi.", B: "Gia công tạo hình sản phẩm.", C: "Xử lí cơ tính.", D: "Lắp ráp sản phẩm." }
+            },
+            {
+                id: 36,
+                text: "Đối tượng lao động của ngành cơ khí chế tạo là",
+                options: { A: "vật liệu kim loại.", B: "vật liệu phi kim loại.", C: "vật liệu cơ khí.", D: "vật liệu kim loại và hợp kim." }
+            },
+            {
+                id: 37,
+                text: "Đúc thuộc giai đoạn nào của quy trình sản xuất cơ khí?",
+                options: { A: "Chế tạo phôi.", B: "Gia công tạo hình sản phẩm.", C: "Xử lí cơ tính.", D: "Lắp ráp sản phẩm." }
+            },
+            {
+                id: 38,
+                text: "Vật liệu nào dùng chế tạo chi tiết cần độ cứng cao, chịu mài mòn tốt?",
+                options: { A: "Gang xám.", B: "Thép hợp kim.", C: "Gỗ.", D: "Cao su." }
+            },
+            {
+                id: 39,
+                text: "Đâu KHÔNG phải phương pháp thay đổi cơ tính cho vật liệu kim loại?",
+                options: { A: "Tôi.", B: "Ủ.", C: "Ram.", D: "Hấp." }
+            },
+            {
+                id: 40,
+                text: "Vật liệu dẫn điện, nhiệt tốt, biến dạng dẻo, bền cơ học cao nhưng bền hóa học kém là?",
+                options: { A: "Vật liệu kim loại.", B: "Vật liệu phi kim loại.", C: "Vật liệu composite.", D: "Vật liệu nano." }
+            },
+            {
+                id: 41,
+                text: "Lắp ráp sản phẩm cơ khí là",
+                options: { 
+                    A: "quá trình thiết kế và chế tạo.", 
+                    B: "quá trình tính toán kích thước chi tiết.", 
+                    C: "giai đoạn cuối cùng nhằm tổ hợp các chi tiết thành sản phẩm hoàn chỉnh.", 
+                    D: "công việc chăm sóc, kiểm tra trạng thái kĩ thuật." 
+                }
+            },
+            {
+                id: 42,
+                text: "Nhiệm vụ của robot hàn là:",
+                options: { A: "Dùng nhiệt để nối các chi tiết.", B: "Lắp ráp và vận chuyển chi tiết.", C: "Gia công sản phẩm.", D: "Đóng gói sản phẩm." }
+            },
+            {
+                id: 43,
+                text: "Một dây chuyền sản xuất tự động bao gồm mấy thành phần cơ bản?",
+                options: { A: "3.", B: "4.", C: "5.", D: "6." }
+            },
+            {
+                id: 44,
+                text: "Dây chuyền tự động cứng KHÔNG có đặc điểm nào sau đây?",
+                options: { A: "Năng suất cao.", B: "Chi phí đầu tư không quá cao.", C: "Dễ dàng thay đổi chương trình để chế tạo chi tiết khác.", D: "Muốn thay đổi cần thiết kế, chế tạo lại cơ cấu điều khiển." }
+            },
+            {
+                id: 45,
+                text: "Quá trình bảo đảm độ tin cậy, kéo dài tuổi thọ thiết bị thuộc công việc nào?",
+                options: { A: "Thiết kế.", B: "Gia công.", C: "Lắp ráp.", D: "Bảo dưỡng, sửa chữa." }
+            },
+            {
+                id: 46,
+                text: "Chức năng của vật liệu nền trong vật liệu Composite là",
+                options: { A: "để liên kết các vật liệu cốt.", B: "để tăng độ bền.", C: "để tạo độ cứng.", D: "để giảm khối lượng." }
+            },
+            {
+                id: 47,
+                text: "Hợp kim nhớ hình là",
+                options: { A: "vật liệu không thay đổi khi có ngoại lực.", B: "vật liệu cấu trúc hạt cỡ nanomet.", C: "vật liệu cơ tính biến thiên.", D: "vật liệu ghi nhớ được hình dạng ban đầu." }
+            },
+            {
+                id: 48,
+                text: "FGM là chữ viết tắt của loại vật liệu nào?",
+                options: { A: "Vật liệu nano.", B: "Vật liệu composite.", C: "Vật liệu cơ tính biến thiên.", D: "Hợp kim nhớ hình." }
+            },
+            {
+                id: 49,
+                text: "Cơ khí chế tạo là:",
+                options: { A: "ngành nghiên cứu, chế tạo, vận hành, sửa chữa máy móc.", B: "công nghệ nấu kim loại lỏng đổ khuôn.", C: "công nghệ điều chế kim loại từ quặng.", D: "ngành tác dụng ngoại lực làm biến dạng kim loại." }
+            },
+            {
+                id: 50,
+                text: "Vai trò của cơ khí chế tạo là",
+                options: { A: "giúp lao động nhẹ nhàng, thay thế thủ công.", B: "chế tạo máy đa năng nhưng năng suất chưa cao.", C: "thúc đẩy phát triển khoa học.", D: "rút ngắn quy trình sản xuất máy móc." }
+            },
+            {
+                id: 51,
+                text: "Sản phẩm KHÔNG phải của cơ khí chế tạo là",
+                options: { A: "nhà xưởng.", B: "trung tâm thương mại.", C: "tàu thủy.", D: "máy bơm nước." }
+            },
+            {
+                id: 52,
+                text: "Đâu KHÔNG phải ngành nghề của cơ khí chế tạo?",
+                options: { A: "Kĩ sư cơ khí.", B: "Kĩ sư cơ học.", C: "Thợ gia công cơ khí.", D: "Thợ lắp ráp cơ khí." }
+            },
+            {
+                id: 53,
+                text: "Đặc điểm giúp phân biệt cơ khí chế tạo với ngành khác là",
+                options: { A: "sử dụng bản vẽ kĩ thuật.", B: "thiết bị chủ yếu là máy tính.", C: "vật liệu chủ yếu là gỗ.", D: "thực hiện linh hoạt, tự điều chỉnh." }
+            },
+            {
+                id: 54,
+                text: "Vì sao cơ khí chế tạo thúc đẩy ngành khác phát triển?",
+                options: { A: "Vì tạo ra máy móc phục vụ đời sống.", B: "Vì tạo ra máy móc phục vụ cho các ngành nghề khác.", C: "Góp phần nâng cao hiệu quả chế tạo.", D: "Làm giảm lao động chân tay." }
+            },
+            {
+                id: 55,
+                text: "Bước xử lí và bảo vệ bề mặt sản phẩm có tác dụng",
+                options: { A: "chống gỉ, chống mài mòn.", B: "tạo khối vật liệu ban đầu.", C: "gia công phôi dễ dàng.", D: "hạn chế hư tổn quá trình chế tạo." }
+            },
+            {
+                id: 56,
+                text: "Độ giãn dài khi kéo của cao su đạt mức",
+                options: { A: "500-600%.", B: "600-700%.", C: "700-800%.", D: "800-900%." }
+            },
+            {
+                id: 57,
+                text: "Đặc điểm của nhựa nhiệt dẻo:",
+                options: { A: "nhẹ, không dẫn điện, không tái sinh.", B: "nhẹ, không dẫn điện, có khả năng chế biến lại.", C: "nhiệt độ nóng chảy thấp, không tái sinh.", D: "nhiệt độ nóng chảy cao, có thể chế biến lại." }
+            },
+            {
+                id: 58,
+                text: "Nguồn gốc cao su tự nhiên từ",
+                options: { A: "than đá.", B: "dầu mỏ.", C: "cây cao su.", D: "than đá và dầu mỏ." }
+            },
+            {
+                id: 59,
+                text: "Sản phẩm nào làm bằng nhựa nhiệt rắn?",
+                options: { A: "Khay đá HDPE.", B: "Săm xe đạp.", C: "Găng tay cao su.", D: "Vỏ ổ cắm điện (bakelite)." }
+            },
+            {
+                id: 60,
+                text: "Trong ngành cơ khí, nhựa nhiệt dẻo dùng để chế tạo",
+                options: { A: "vỏ tàu thuyền.", B: "chi tiết máy bay.", C: "bánh răng.", D: "ống dẫn hóa chất." }
+            },
+            {
+                id: 61,
+                text: "Vật liệu nào sau đây là vật liệu mới?",
+                options: { A: "Kim loại thông dụng.", B: "Nano, composite, FGM, hợp kim nhớ hình.", C: "Sắt và hợp kim sắt.", D: "Nhựa nhiệt dẻo, nhiệt rắn và cao su." }
+            },
+            {
+                id: 62,
+                text: "Đặc điểm dây chuyền tự động cứng là?",
+                options: { A: "Độ ổn định không cao.", B: "Chi phí đầu tư cao.", C: "Chi phí đầu tư không quá lớn.", D: "Độ linh hoạt cao." }
+            },
+            {
+                id: 63,
+                text: "Tác động của cách mạng công nghiệp 4.0 là:",
+                options: { A: "Loại bỏ con người.", B: "Tự động hóa, kết nối.", C: "Giảm vai trò robot.", D: "Không ảnh hưởng." }
+            },
+            {
+                id: 64,
+                text: "Lập quy trình công nghệ gia công là bước sau khi đã có",
+                options: { A: "phôi.", B: "phoi.", C: "bản vẽ xây dựng.", D: "bản vẽ kĩ thuật." }
+            },
+            {
+                id: 65,
+                text: "Quy trình sản xuất cơ khí nào là ĐÚNG?",
+                options: { A: "Phôi -> Lắp ráp -> Xử lí -> Gia công -> Đóng gói.", B: "Phôi -> Gia công -> Xử lí -> Lắp ráp -> Đóng gói.", C: "Gia công -> Phôi -> Xử lí -> Lắp ráp -> Đóng gói.", D: "Gia công -> Xử lí -> Phôi -> Lắp ráp -> Đóng gói." }
+            },
+            {
+                id: 66,
+                text: "Phương pháp TIỆN là?",
+                options: { 
+                    A: "Rót vật liệu lỏng vào khuôn.", 
+                    B: "Gia công lỗ từ phôi.", 
+                    C: "Nối chi tiết bằng cách nung nóng chảy.", 
+                    D: "Gia công cắt gọt phối hợp phôi quay tròn và dao tịnh tiến." 
+                }
+            },
+            {
+                id: 67,
+                text: "Đặc điểm đúc khuôn cát là",
+                options: { A: "dùng kim loại tạo khuôn.", B: "khuôn chỉ dùng một lần.", C: "chất lượng sản phẩm tốt nhất.", D: "chỉ đúc được một loại kim loại." }
+            },
+            {
+                id: 69,
+                text: "Trong xử lí mài và đánh bóng, robot cần trang bị thêm",
+                options: { A: "Bàn tay kẹp.", B: "Cảm biến hình ảnh.", C: "Công nghệ cảm ứng lực.", D: "Camera quét 3D." }
+            },
+            {
+                id: 70,
+                text: "Công nghệ thu thập thông số thiết bị trong sản xuất là?",
+                options: { A: "IIoT (Kết nối vạn vật công nghiệp).", B: "Dữ liệu lớn.", C: "Trí tuệ nhân tạo.", D: "Điện toán đám mây." }
+            },
+            {
+                id: 71,
+                text: "Máy tiện CNC là:",
+                options: { A: "Máy tự động.", B: "Máy tự động cứng.", C: "Máy tự động mềm.", D: "Người máy công nghiệp." }
+            },
+            {
+                id: 72,
+                text: "Nguyên nhân gây suy giảm thính lực trong sản xuất cơ khí?",
+                options: { A: "Bụi bẩn.", B: "Nước thải.", C: "Tiếng ồn từ máy gia công.", D: "Chất thải rắn." }
+            },
+            {
+                id: 73,
+                text: "Hợp kim nhớ hình điển hình nhất là:",
+                options: { A: "Nickel.", B: "Nitinol.", C: "Nhôm.", D: "Gang." }
+            },
+            {
+                id: 74,
+                text: "Nghề nghiệp nào KHÔNG thuộc gia công cơ khí?",
+                options: { A: "Thợ cắt gọt.", B: "Thợ hàn.", C: "Thợ mỏ.", D: "Thợ rèn dập." }
+            },
+            {
+                id: 75,
+                text: "Tính chất hóa học của sắt và hợp kim sắt là:",
+                options: { A: "hay bị oxi hóa, chịu ăn mòn kém.", B: "ít bị oxi hóa.", C: "khó phản ứng hóa học.", D: "không bị gỉ." }
+            },
+            {
+                id: 76,
+                text: "Sản phẩm cơ khí ứng dụng trong nông nghiệp là:",
+                options: { A: "Máy tiện, gặt.", B: "Máy phay, bào.", C: "Máy cày, gặt, bơm nước.", D: "Máy cày, bào." }
+            },
+            {
+                id: 77,
+                text: "Thép carbon có hàm lượng carbon là:",
+                options: { A: "<0,5%.", B: ">2,14%.", C: ">0,5%.", D: "<2,14%." }
+            },
+            {
+                id: 78,
+                text: "Cao su dùng làm săm lốp vì:",
+                options: { A: "bền nhiệt, nhẹ.", B: "đàn hồi, bền dẻo, chịu mài mòn, ma sát tốt.", C: "dẫn điện cao.", D: "độ cứng cao." }
+            },
+            {
+                id: 79,
+                text: "Tính chất nào KHÔNG thuộc tính chất vật lý?",
+                options: { A: "Độ bền.", B: "Điện.", C: "Nhiệt.", D: "Quang học." }
+            },
+            {
+                id: 80,
+                text: "Vật liệu cơ khí là:",
+                options: { A: "kim loại dùng sản xuất.", B: "vật liệu dùng sản xuất cơ khí tạo sản phẩm.", C: "chất dùng sản xuất.", D: "dụng cụ sản xuất." }
+            },
+            {
+                id: 81,
+                text: "Nhận biết vật liệu gang dựa vào:",
+                options: { A: "Màu đen mặt gãy.", B: "Độ dẻo.", C: "Tính đàn hồi.", D: "Màu xám ở mặt gãy." }
+            },
+            {
+                id: 82,
+                text: "Cơ khí chế tạo sử dụng kiến thức lĩnh vực:",
+                options: { A: "Sử, Địa, Lý.", B: "Toán, Lý, Công nghệ.", C: "Hóa, Địa, Toán.", D: "Sinh, Địa." }
+            },
+            {
+                id: 83,
+                text: "Nhóm vật liệu dùng chủ yếu trong cơ khí:",
+                options: { A: "Kim loại đen và màu.", B: "Phi kim.", C: "Vật liệu mới.", D: "Kim loại và hợp kim." }
+            },
+            {
+                id: 84,
+                text: "Bước quyết định tạo hình, độ chính xác chi tiết là:",
+                options: { A: "Chế tạo phôi.", B: "Bảo vệ bề mặt.", C: "Thực hiện gia công.", D: "Lắp ráp." }
+            },
+            {
+                id: 85,
+                text: "Các bước cơ bản quy trình chế tạo cơ khí:",
+                options: { A: "Đọc bản vẽ, gia công, lắp ráp.", B: "Chọn vật liệu, chế tạo phôi, xử lí.", C: "Thiết kế, gia công, đóng gói.", D: "Đọc bản vẽ, chế tạo phôi, gia công, xử lí, lắp ráp." }
+            },
+            {
+                id: 86,
+                text: "Inox là:",
+                options: { A: "vật liệu hợp kim.", B: "vật liệu kim loại.", C: "vật liệu mới.", D: "phi kim." }
+            },
+            {
+                id: 87,
+                text: "Quy trình chế tạo kìm nguội:",
+                options: { A: "Bản vẽ; phôi rèn dập; gia công; nhiệt luyện; lắp ráp.", B: "Nấu chảy; đổ khuôn; mạ.", C: "Cắt gọt; mài; mạ.", D: "Gia công; đánh bóng; sơn." }
+            },
+            {
+                id: 88,
+                text: "Vai trò cơ khí chế tạo:",
+                options: { A: "Nâng cao giáo dục.", B: "Tạo công cụ thay thế lao động thủ công.", C: "Rút ngắn quy trình sản xuất.", D: "Chế tạo máy đa năng." }
+            },
+            {
+                id: 89,
+                text: "Để tạo tính chất mới (chịu nhiệt, chống gỉ...) cần bước:",
+                options: { A: "Chế tạo phôi.", B: "Gia công.", C: "Xử lí bề mặt.", D: "Lắp ráp." }
+            },
+            {
+                id: 90,
+                text: "Sản phẩm làm bằng nhựa nhiệt rắn?",
+                options: { A: "Vỏ công tắc điện.", B: "Vỏ điện thoại.", C: "Ống PVC.", D: "Túi nilon." }
+            },
+            {
+                id: 91,
+                text: "Người thiết kế, sản xuất, vận hành máy móc gọi là:",
+                options: { A: "Kĩ sư xây dựng.", B: "Kĩ sư điện.", C: "Kĩ sư điện tử.", D: "Kĩ sư cơ khí." }
+            },
+            {
+                id: 92,
+                text: "Vật liệu may mặc có khả năng diệt khuẩn là:",
+                options: { A: "Nhớ hình.", B: "Composite.", C: "FGM.", D: "Nano." }
+            },
+            {
+                id: 93,
+                text: "Quy trình chế tạo cơ khí bao gồm bao nhiêu bước?",
+                options: { A: "3.", B: "5.", C: "4.", D: "6." }
+            },
+            {
+                id: 94,
+                text: "Nghề nghiệp gia công cơ khí gồm:",
+                options: { A: "Kĩ sư lắp ráp.", B: "Kĩ sư phòng kĩ thuật.", C: "Kĩ sư điện.", D: "Thợ cắt gọt, hàn, rèn dập." }
+            },
+            {
+                id: 95,
+                text: "Phần lớn sản phẩm cơ khí chế tạo là:",
+                options: { A: "Công trình.", B: "Chi tiết máy móc.", C: "Phương tiện.", D: "Dụng cụ nông nghiệp." }
+            },
+            {
+                id: 96,
+                text: "Thiết kế bộ phận máy bay cần bền, nhẹ, chống ăn mòn nên chọn:",
+                options: { A: "Thép.", B: "Nhôm.", C: "Composite.", D: "Đồng." }
+            },
+            {
+                id: 97,
+                text: "Chế độ cắt khi khoan bao gồm:",
+                options: { A: "Vận tốc cắt và lượng chạy dao.", B: "Lượng chạy dao và chiều sâu.", C: "Vận tốc và chiều sâu.", D: "Lượng chạy dao, vận tốc và chiều sâu cắt." }
+            },
+            {
+                id: 98,
+                text: "Chuyển động chính khi khoan là",
+                options: { A: "quay.", B: "tịnh tiến.", C: "quay và tịnh tiến.", D: "quay hoặc tịnh tiến." }
+            },
+            {
+                id: 99,
+                text: "Gia công TIỆN là phương pháp phối hợp:",
+                options: { C: "dao quay và phôi tịnh tiến.", D: "phôi quay tròn và dao tịnh tiến." }
+            },
+            {
+                id: 100,
+                text: "Các chuyển động khi tiện bao gồm:",
+                options: { A: "ngang, thẳng, chéo.", B: "ngang, dọc, chéo.", C: "thẳng, chéo.", D: "chéo, ngang." }
+            }
+        ];
