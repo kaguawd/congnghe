@@ -1,0 +1,5 @@
+{
+  "name": "Quiz Master - AI Word Parser",
+  "description": "An intelligent quiz application that parses Word documents (identifying underlined answers as correct) and allows users to take tests with instant feedback.",
+  "requestFramePermissions": []
+}
